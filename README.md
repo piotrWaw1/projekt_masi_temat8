@@ -5,6 +5,8 @@
 > - npm v10.5.0
 
 ## Temat projektu
+> [!NOTE]
+> Projekt temat 8.
 
 > Modelowanie i analiza systemu informatycznego realizującego zmianę
 ***unitermu pionowej operacji sekwencjowania unitermów***
