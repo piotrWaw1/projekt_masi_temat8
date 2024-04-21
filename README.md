@@ -4,6 +4,8 @@
 > - node.js v20.12.0
 > - npm v10.5.0
 
+### Link do projektu na [GitHub Pages] (https://piotrwaw1.github.io/projekt_masi_temat8/)
+
 ## Temat projektu
 > [!NOTE]
 > Projekt temat 8.
