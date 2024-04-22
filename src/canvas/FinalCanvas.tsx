@@ -5,6 +5,8 @@ interface UnitermValues {
   uni2: string;
   uni3: string;
   uni4: string;
+  operation1: string;
+  operation2: string;
 }
 
 interface FinalCanvasProps {
@@ -41,11 +43,11 @@ const FinalCanvas: FC<FinalCanvasProps> = (props) => {
         context.stroke();
         context.font = "25px Arial"
         context.fillText(values.uni3, 125, 50)
-        context.fillText(";", 132, 71)
+        context.fillText(values.operation2, 132, 71)
         context.fillText(values.uni4, 125, 100)
         //down
         context.font = "40px Arial"
-        context.fillText(";", 108, 135)
+        context.fillText(values.operation1, 108, 135)
         context.fillText(values.uni2, 100, 180)
       } else {
         // extra term down
@@ -55,11 +57,11 @@ const FinalCanvas: FC<FinalCanvasProps> = (props) => {
         context.stroke();
         context.font = "25px Arial"
         context.fillText(values.uni3, 125, 135)
-        context.fillText(";", 132, 155)
+        context.fillText(values.operation2, 132, 155)
         context.fillText(values.uni4, 125, 185)
         // up
         context.font = "40px Arial"
-        context.fillText(";", 108, 105)
+        context.fillText(values.operation1, 108, 100)
         context.fillText(values.uni1, 100, 70)
       }
     }

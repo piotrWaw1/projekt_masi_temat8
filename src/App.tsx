@@ -10,6 +10,8 @@ interface UnitermValues {
   uni2: string;
   uni3: string;
   uni4: string;
+  operation1: string;
+  operation2: string;
 }
 
 const FORM_FIELDS_NAME1 = {
@@ -28,11 +30,17 @@ function App() {
     uni2: '',
     uni3: '',
     uni4: '',
+    operation1: '',
+    operation2: ''
   })
   const [position, setPosition] = useState<undefined | string>()
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name
     const value = event.target.value
+
+    console.log(name)
+    console.log(value)
+
     setValues(prevState => ({
       ...prevState,
       [name]: value
@@ -40,10 +48,9 @@ function App() {
   }
 
   const setState = (state: string) => {
-    if(state === position){
+    if (state === position) {
       setPosition(undefined)
-    }
-    else {
+    } else {
       setPosition(state)
     }
   }
@@ -59,8 +66,12 @@ function App() {
                   handleChange={handleChange}
                   title={"Uniterm 1"}
                   uniValues={{value1: values.uni1, value2: values.uni2}}
+                  op={"operation1"}
               />
-              <Canvas width="inherit" height="200px" values={{v1: values.uni1, v2: values.uni2}}/>
+              <Canvas
+                  width="inherit" height="200px"
+                  values={{v1: values.uni1, v2: values.uni2, op: values.operation1}}
+              />
             </Col>
             <Col lg={6}>
               <UnitermForm
@@ -68,8 +79,12 @@ function App() {
                   handleChange={handleChange}
                   title={"Uniterm 2"}
                   uniValues={{value1: values.uni3, value2: values.uni4}}
+                  op={"operation2"}
               />
-              <Canvas width="inherit" height="200px" values={{v1: values.uni3, v2: values.uni4}}/>
+              <Canvas
+                  width="inherit" height="200px"
+                  values={{v1: values.uni3, v2: values.uni4, op: values.operation2}}
+              />
             </Col>
           </Row>
           <Row>

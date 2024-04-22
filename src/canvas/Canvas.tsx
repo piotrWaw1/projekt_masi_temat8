@@ -1,11 +1,12 @@
-import {FC, useEffect, useRef} from "react";
+import {FC  , useEffect, useRef} from "react";
 
 interface CanvasProps {
-  width: string,
-  height: string,
+  width: string;
+  height: string;
   values: {
-    v1: string,
-    v2: string
+    v1: string;
+    v2: string;
+    op:string;
   }
 }
 
@@ -13,7 +14,6 @@ const Canvas: FC<CanvasProps> = (props) => {
 
   const {width, height, values} = props
   const ref = useRef<HTMLCanvasElement>(null)
-
 
   useEffect(() => {
     const draw = (context: CanvasRenderingContext2D) => {
@@ -28,7 +28,7 @@ const Canvas: FC<CanvasProps> = (props) => {
       context.stroke();
 
       context.fillText(values.v1, 100, 70)
-      context.fillText(";", 108, 105)
+      context.fillText(values.op, 108, 101)
       context.fillText(values.v2, 100, 145)
     }
 
@@ -43,7 +43,7 @@ const Canvas: FC<CanvasProps> = (props) => {
       }
     }
     // console.log("loop")
-  }, [values.v1, values.v2]);
+  }, [values.op, values.v1, values.v2]);
 
   return (
       <canvas ref={ref} width={width} height={height} className="border border-secondary-subtle border-opacity-10 shadow-lg p-3 mb-5 rounded"/>
